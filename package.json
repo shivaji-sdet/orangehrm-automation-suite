@@ -1,0 +1,62 @@
+{
+  "name": "orangehrm-automation-suite",
+  "version": "1.0.0",
+  "description": "Playwright test automation for OrangeHRM Demo - Framework replica",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:chrome": "playwright test --project=\"chrome\"",
+    "test:firefox": "playwright test --project=\"firefox\"",
+    "test:safari": "playwright test --project=\"webkit\"",
+    "test:edge": "playwright test --project=\"Microsoft Edge\"",
+    "test:mobile": "playwright test --project=\"Mobile Chrome\"",
+    "test:e2e": "playwright test tests/e2e/",
+    "test:auth": "playwright test tests/e2e/auth/",
+    "test:pim": "playwright test tests/e2e/pim/",
+    "test:leave": "playwright test tests/e2e/leave/",
+    "test:dashboard": "playwright test tests/e2e/dashboard/",
+    "test:recruitment": "playwright test tests/e2e/recruitment/",
+    "test:admin": "playwright test tests/e2e/admin/",
+    "test:ci": "CI=true playwright test --reporter=./tests/utils/reporters/ProgressReporter.ts,html --max-failures=5",
+    "test:ci:smoke": "CI=true playwright test --grep=\"@smoke\" --project=chrome --reporter=./tests/utils/reporters/ProgressReporter.ts,html",
+    "test:ci:daily": "CI=true playwright test --grep=\"@daily\" --project=chrome --reporter=./tests/utils/reporters/ProgressReporter.ts,html",
+    "test:ci:full": "CI=true playwright test --project=chrome --retries=1 --reporter=./tests/utils/reporters/ProgressReporter.ts,html",
+    "test:staging": "NODE_ENV=staging playwright test",
+    "test:production": "NODE_ENV=production playwright test",
+    "test:development": "NODE_ENV=development playwright test",
+    "test:ci:chrome": "CI=true playwright test --project=chrome --reporter=./tests/utils/reporters/ProgressReporter.ts,html",
+    "test:ci:headless": "CI=true playwright test --project=chrome --headed=false --reporter=./tests/utils/reporters/ProgressReporter.ts,html",
+    "install-browsers": "playwright install",
+    "report": "playwright show-report",
+    "report:merge": "playwright merge-reports test-results/ --reporter html",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf test-results/ playwright-report/ screenshots/ dist/",
+    "clean:dist": "rm -rf dist/",
+    "ci:setup": "npm ci && npx playwright install --with-deps chromium firefox webkit"
+  },
+  "keywords": [
+    "playwright",
+    "automation",
+    "testing",
+    "orangehrm"
+  ],
+  "author": "Test Automation Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.44.0",
+    "@typescript-eslint/parser": "^8.44.0",
+    "eslint": "^9.35.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.1.0",
+    "dotenv": "^17.2.1",
+    "dayjs": "^1.11.15"
+  }
+}
