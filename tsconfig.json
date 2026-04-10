@@ -4,7 +4,6 @@
     "module": "commonjs",
     "lib": ["ES2020", "dom"],
     "types": ["node"],
-    "ignoreDeprecations": "5.0",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -15,13 +14,11 @@
     "sourceMap": true,
     "outDir": "./dist",
     "rootDir": ".",
-    "baseUrl": ".",
     "paths": {
-      "@utils/*": ["tests/utils/*"],
-      "@fixtures/*": ["tests/fixtures/*"],
-      "@page-objects/*": ["tests/utils/page-objects/*"],
-      "@helpers/*": ["tests/utils/helpers/*"],
-      "@test-data/*": ["tests/utils/test-data/*"]
+      "@utils/*": ["./tests/utils/*"],
+      "@fixtures/*": ["./tests/fixtures/*"],
+      "@page-objects/*": ["./tests/utils/page-objects/*"],
+      "@test-data/*": ["./tests/utils/test-data/*"]
     }
   },
   "include": [
