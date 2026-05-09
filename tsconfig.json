@@ -9,27 +9,14 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "outDir": "./dist",
-    "rootDir": ".",
-    "paths": {
-      "@utils/*": ["./tests/utils/*"],
-      "@fixtures/*": ["./tests/fixtures/*"],
-      "@page-objects/*": ["./tests/utils/page-objects/*"],
-      "@test-data/*": ["./tests/utils/test-data/*"]
-    }
+    "sourceMap": true
   },
   "include": [
     "tests/**/*.ts",
-    "playwright.config.ts",
-    "utils/**/*.ts",
-    "scripts/**/*.ts"
+    "playwright.config.ts"
   ],
   "exclude": [
     "node_modules",
-    "dist",
     "test-results",
     "playwright-report"
   ]
